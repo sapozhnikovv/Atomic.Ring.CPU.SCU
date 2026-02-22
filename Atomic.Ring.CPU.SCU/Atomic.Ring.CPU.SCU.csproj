@@ -7,7 +7,7 @@
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Title>Atomic.Ring.CPU.SCU</Title>
 	<Authors>Vyacheslav Sapozhnikov</Authors>
-	<Description>High‑performance, Lock‑free, Thread‑safe and timing-stable counter that absolutely eliminates CPU 'false sharing'. Cross-platform: win, linux, mac</Description>
+	<Description>High‑performance, Lock‑free, Thread‑safe and timing-stable counter that absolutely eliminates CPU 'false sharing'. 13.8x faster than 'Interlocked'. Cross-platform: win, linux, mac</Description>
 	<Copyright>Copyright (c) 2026 VSapozhnikov</Copyright>
 	<PackageTags>High‑performance; Lock‑free; Thread‑safe; timing-stable; Counter; false sharing;CPU; Cache Line; Windows; Linux; Mac; System; Info; Tool; Util</PackageTags>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,7 +18,7 @@
 	<PackageIcon>logo.jpg</PackageIcon>
 	<PackageId>Atomic.Ring.CPU.SCU</PackageId>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>1.0.0.0</Version>
+	<Version>1.0.0.1</Version>
 	<TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
   </PropertyGroup>
 
