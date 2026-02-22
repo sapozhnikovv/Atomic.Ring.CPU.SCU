@@ -160,6 +160,5 @@ public class UnsafeAtomicCounter: IDisposable
     {
         if (Interlocked.CompareExchange(ref _disposed, 1, 0) != 0) return;
         _handle?.Dispose();
-        GC.SuppressFinalize(this);
     }
 }
