@@ -35,7 +35,7 @@ NuGet\Install-Package Atomic.Ring.CPU.SCU
   - **`ManagedAtomicCounterXX`** – fully managed, uses a `struct` with explicit padding to cache‑line size  
     ⚠️ **Reduces false sharing** but cannot fully eliminate it due to object header shift in managed arrays (4-8 bytes initial shift)     
     🚀 **No `IDisposable`** – pure managed code. Available in variants for 32, 64, 128, and 256‑byte cache lines   
-  - Factory uses for not high-load cases. Better performance (close to the unsafe version) can be achieved by using concrete types instead of ManagedAtomicCounterBase from ManagedAtomicCounterFactory, the type should be determined by the ManagedAtomicCounterFactory.CACHE_LINE_SIZE parameter or from CacheLine.CPU.SCU package    
+  - Factory uses for not high-load cases. Better performance (close to the unsafe version) can be achieved by using concrete types instead of ManagedAtomicCounterBase from ManagedAtomicCounterFactory, the type should be determined by the ManagedAtomicCounterFactory.CACHE_LINE_SIZE or from CacheLine.CPU.SCU package    
 - **Dynamic sizing** – default ring length = `Environment.ProcessorCount × 2^expansionFactor` (0 ≤ 'ExpansionFactor' ≤ 8). 'ExpansionFactor' is 0 by default   
 - **Automatic thread distribution** – threads are assigned a slot based on `Environment.CurrentManagedThreadId` (faster than `Thread.CurrentThread.ManagedThreadId`). Yes. It is not a 100% guarantee of even distribution, but for large ring sizes it works very well      
 - **Explicit indexing** – you can also specify the slot index manually   
