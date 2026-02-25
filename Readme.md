@@ -54,7 +54,7 @@ The table below shows **mean execution time** for different thread counts and ex
    
 | Method                                             | Expansion | Threads | Mean (μs) | vs Simple |
 |----------------------------------------------------|-----------|--------:|----------:|----------:|
-| `SimpleCounter` (baseline)                         | 0(not used)| 64      | 166 592   | 1.00x     |
+| `SimpleInterlockedCounter`(baseline)                | 0(not used)| 64      | 166 592   | 1.00x     |
 | `UnsafeAtomicCounter`                               | 0         | 64      | 18 597    | **8.96x faster** |
 | `UnsafeAtomicCounter`                               | 4         | 64      | 12 053    | **13.8x faster** |
 | `ManagedAtomicCounter64` (via factory, base class) | 0         | 64      | 41 067    | 4.06x faster |
