@@ -75,7 +75,7 @@ These numbers are **illustrative only** – unit tests are not reliable for perf
 
 | Test                                                       | Time   |
 |------------------------------------------------------------|-------:|
-| `TestSimpleCounter`                                        | 904 ms |
+| `TestSimpleInterlockedCounter`                             | 904 ms |
 | `TestAtomicCounter` (`UnsafeAtomicCounter`)                | 63 ms  |
 | `SimplifiedAtomicCounterWithSpecificType` (concrete)       | 65 ms  |
 | `SimplifiedAtomicCounterWithoutSpecificType` (base class)  | 67 ms  |
