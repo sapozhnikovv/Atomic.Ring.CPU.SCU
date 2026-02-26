@@ -27,7 +27,7 @@ public class CounterBenchmark
     public async Task SimpleCounterTest()
     {
         var simpleCounter = new SimpleCounter();
-        var barrier = new Barrier(ThreadCount);
+        using var barrier = new Barrier(ThreadCount);
         var tasks = new List<Task>();
         for (var x = 0; x < ThreadCount; x++)
         {
@@ -52,7 +52,7 @@ public class CounterBenchmark
     public async Task AtomicCounterTest()
     {
         using var atomicCounter = new UnsafeAtomicCounter(ExpansionFactor);
-        var barrier = new Barrier(ThreadCount);
+        using var barrier = new Barrier(ThreadCount);
         var tasks = new List<Task>();
         for (var x = 0; x < ThreadCount; x++)
         {
@@ -77,7 +77,7 @@ public class CounterBenchmark
     public async Task SimplifiedAtomicCounterWithoutSpecificTypeTest()
     {
         var simplifiedAtomicCounterWithoutUnsafe = ManagedAtomicCounterFactory.ConstructManagedAtomicCounter(ExpansionFactor);
-        var barrier = new Barrier(ThreadCount);
+        using var barrier = new Barrier(ThreadCount);
         var tasks = new List<Task>();
         for (var x = 0; x < ThreadCount; x++)
         {
@@ -102,7 +102,7 @@ public class CounterBenchmark
     public async Task SimplifiedAtomicCounterWithSpecificTypeCloseToUnsafeVersionTest()
     {
         var simplifiedAtomicCounterWithoutUnsafe = (ManagedAtomicCounter64)ManagedAtomicCounterFactory.ConstructManagedAtomicCounter(ExpansionFactor);
-        var barrier = new Barrier(ThreadCount);
+        using var barrier = new Barrier(ThreadCount);
         var tasks = new List<Task>();
         for (var x = 0; x < ThreadCount; x++)
         {
